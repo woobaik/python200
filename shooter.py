@@ -32,10 +32,15 @@ def main():
     move_y_to_top = 0
     move_y_to_bottom = 0
 
+    # pygame clock
+    clock = pygame.time.Clock()
+
     running = True
 
     while running:
         # getting all events
+
+        dt = clock.tick(60)
         for event in pygame.event.get():
             # if user clicks quit button at top right corner
 
