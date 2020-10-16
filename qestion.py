@@ -1,15 +1,14 @@
-def BabylonianAlgorithm(number):
-    if(number == 0):
-        return 0
+def delete_from_dict(a, *b):
+    if not isinstance(a, dict):
+        print(f"You need to send a dictionary. You sent: {type(a)}")
+        return
 
-    g = number/2.0
-    g2 = g + 1
-    while(g != g2):
-        n = number / g
-        g2 = g
-        g = (g + n)/2
+    if len(b) != 1:
+        print("You need to specify a word to delete.")
 
-    return g
-
-
-print('The Square root of 0.3 =', BabylonianAlgorithm(0.3))
+    else:
+        if b[0] in a:
+            del a[b[0]]
+            print(f"{b[0]} has been deleted.")
+        else:
+            print(f"{b[0]} is not in dict. Won't delete.")
